@@ -63,7 +63,12 @@ len1 = int(input('Input length 1: '))
 len2 = int(input('Input length 2: '))
 len3 = int(input('Input length 3: '))
 
-if len1 + len2 > len3 | len2 + len3 > len1 | len1 + len3 > len2:
+if (len1 + len2 > len3 
+    and len2 + len3 > len1 
+    and len1 + len3 > len2
+    and len1 > 0 
+    and len2 > 0 
+    and len3 > 0 ):
     print('The 3 line segments can form a triangle.')
 else:
     print('The 3 line segments cannot form a triangle.')

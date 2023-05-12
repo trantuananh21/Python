@@ -12,8 +12,9 @@ Area: {s}
 
 
 #  Bài 2
+import math
 lenEdge = float(input("Length of edge: "))
-lenDigLine = lenEdge ** 2 + lenEdge ** 2
+lenDigLine= lenEdge * math.sqrt(lenEdge)
 
 print("Length of diagonal line:", lenDigLine)
 
