@@ -8,3 +8,17 @@ for i in myList:
         
 print('Even numbers: ', evenList)
 
+# 2
+total = 0
+input = input('''
+Input the list of numbers.
+Enter 0 to finish.
+
+''')
+
+while input != 0:
+    for i in range(0, int(input)):
+        total = total + int(i)
+        i = i+i
+    if input == 0:
+        print('Sum of numbers in list:', total)

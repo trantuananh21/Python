@@ -30,5 +30,5 @@ chữ số bằng dấu cách:
 list  = inputNumber.split()
 sum = 0
 for num in list:
-    sum += int (num)
+    sum += int(num)
 print("Sum = ",sum)
