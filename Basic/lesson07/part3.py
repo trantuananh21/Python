@@ -20,15 +20,18 @@ while (i < len(num)):
 
 print('Sum of numbers in list:', total)
 
-# Bài 3 em làm khác một chút, thay vì dùng số 0 để dừng thì em viết tất cả các chữ số rồi ấn enter là xong
 # 3
-inputNumber = input('''
-Viết cách chữ số với 
-một điều kiện cách các 
-chữ số bằng dấu cách: 
+print('''
+Input the list of numbers. 
+Enter 0 to finish.
 ''')
-list  = inputNumber.split()
-sum = 0
-for num in list:
-    sum += int(num)
-print("Sum = ",sum)
+      
+numList = []
+while True:
+    value = int(input(''))
+    if value != 0:
+        numList.append(value)
+    else: break
+sum_of = sum(numList)
+
+print('Sum of numbers in list:', sum_of)
