@@ -20,4 +20,3 @@ scores2.sort(reverse = True)
 for i, name in enumerate(scores2):
     if i < 5:
         print(f'''{i+1}. {name}''')
-
