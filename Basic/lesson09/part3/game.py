@@ -1,3 +1,4 @@
+# Phần 3 này em chưa làm được ạ
 import os
 import getch
 
