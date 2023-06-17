@@ -60,6 +60,7 @@ print('\n== THE ESCAPE GAME ==')
 print('Use W A S D to move (P)layer.')
 print('Find (K)ey first then exit through the (D)oor.')
 
+count_key = 0
 while True:
 
   ch = getch.getch().decode('utf-8').upper()
@@ -68,10 +69,11 @@ while True:
   
   if value == 'K': 
     found_key = True
+    count_key += 1
 
   elif value == 'D': 
 
-    os.system('cls')
+    os.system('clear')
     print_map(map, ROWS, COLS)
 
     if found_key: 
@@ -81,5 +83,6 @@ while True:
       print('Maybe find the Key first?')
     break 
 
-  os.system('cls')
+  os.system('clear')
+
   print_map(map, ROWS, COLS)
