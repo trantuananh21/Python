@@ -5,8 +5,6 @@ def print_fibo(n):
        return(print_fibo(n-1) + print_fibo(n-2))
 
 num = int(input('Input a number: '))
-
-# check if the number of terms is valid
 if num <= 0:
    print("Plese enter a positive integer")
 else:
