@@ -11,7 +11,7 @@ while True:
         txt.append(my_input + '\n')
 
 
-with open('/Users/macbook/Documents/Python/Python/BTVN/Basic/lesson11/user-inputs.txt', 'w') as test:
+with open('/Users/macbook/Documents/Python/Python/BTVN/Basic/lesson12/user-inputs.txt', 'w') as test:
     test.writelines(txt)
 
 print('== Input recorded in user-inputs.txt ==')

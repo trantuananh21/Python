@@ -11,7 +11,7 @@ while True:
     else:
         txt.append(my_input + '\n')
 
-path = "/Users/macbook/Documents/Python/Python/BTVN/Basic/lesson11/input-logs.txt"
+path = "/Users/macbook/Documents/Python/Python/BTVN/Basic/lesson12/input-logs.txt"
 
 # Viết vào file
 with open(path, 'a') as test:
@@ -24,4 +24,4 @@ with open(path, 'a') as test:
     test.write(f'Inputs at {datestamp}\n')
     test.writelines(txt)
 
-print('== Input recorded in user-inputs.txt ==')
+print('== Input recorded in input-log.txt ==')
