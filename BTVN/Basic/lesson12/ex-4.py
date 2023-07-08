@@ -1,3 +1,5 @@
+import datetime
+import os
 print('== Input file content below ==')
 
 # Nhập text
@@ -12,15 +14,13 @@ while True:
         txt.append(my_input + '\n')
 
 path = "/Users/macbook/Documents/Python/Python/BTVN/Basic/lesson12/input-logs.txt"
+# Lấy giờ
+timestamp = os.path.getmtime(path)
+datestamp = datetime.datetime.fromtimestamp(timestamp)
+
 
 # Viết vào file
 with open(path, 'a') as test:
-    # Lấy giờ
-    import datetime
-    import os
-    timestamp = os.path.getmtime(path)
-    datestamp = datetime.datetime.fromtimestamp(timestamp)
-
     test.write(f'Inputs at {datestamp}\n')
     test.writelines(txt)
 
