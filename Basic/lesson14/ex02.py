@@ -1,7 +1,7 @@
 import math
-a = int(input('Input a: '))
-b = int(input('Input b: '))
-c = int(input('Input c: '))
+a = float(input('Input a: '))
+b = float(input('Input b: '))
+c = float(input('Input c: '))
 
 if a <= 0:
     print('A must be bigger than 0')
