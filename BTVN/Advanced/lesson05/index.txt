@@ -1,0 +1,37 @@
+1.
+- Cơ sở dữ liệu quan hệ lưu trữ dữ liệu ở định dạng bảng có hàng và cột.
+- Các cột chứa thuộc tính dữ liệu và các hàng chứa giá trị dữ liệu.
+
++ Các cơ sở dữ liệu phi quan hệ sử dụng nhiều mô hình dữ liệu khác nhau để truy cập và quản lý dữ liệu.
++ Chúng được tối ưu hóa riêng cho các ứng dụng yêu cầu mô hình dữ liệu linh hoạt, có lượng dữ liệu lớn và độ trễ thấp, có thể đạt
+được bằng cách giảm bớt một số hạn chế về tính nhất quán của dữ liệu của các cơ sở dữ liệu khác.
+////////////////
+
+
+2. 
+- Quan hệ một - một: một khách hàng chỉ có duy nhất thông tin A và khách hàng khác không có thông tin đó thì gọi là quan hệ một - một,
+vd: một nước có một thủ đô, một người chỉ có duy nhất dấu vân tay không giống ai
+
+- Quan hệ một - nhiều: một khách hàng có thể không có item này, nhưng nếu có thì có thể có nhiều item đó và item đó chỉ thuộc duy nhất
+khách hàng đó thôi. Ví dụ: một nhà thiết kế quần áo có thể không thiết kế chiếc tất nào nhưng mỗi chiếc tất anh ý thiết kế ra, đều
+thuộc về anh ý. 
+
+- Quan hệ nhiều - nhiều: thông tin item có điểm chung với các bảng khác là mối quan hệ nhiều - nhiều. Ví dụ: nhiều khách hàng có thể
+mua rất nhiều đồ và nhiều đồ có thể bị thanh toán bởi nhiều người. 
+
+- Self-Referential Relationships: đây là quan hệ mà một bảng cần một quan hệ với chính nó. Ví dụ: số người theo dõi facebook, instagram,..
+///////////////////
+
+
+3. 
+A. Mỗi dòng chứa đầy đủ thông tin về một đối tượng trong bảng.
+/////////////////////
+
+
+4. 
+A. Ngôn ngữ truy vấn và quản lý trong cơ sở dữ liệu.
+////////////////////
+
+
+5. 
+C. ALTER

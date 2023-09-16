@@ -1,99 +1,102 @@
 import pygame
 import random
+import sys
 
-# KHOI TAO GAME
 pygame.init()
-
-# CAI DAT MAN HINH
+#RAN SAN MOI 
+#MINDX_GV.TRANVIETTRUONG
+# Cài Đặt màn hình
 width, height = 640, 480
 screen = pygame.display.set_mode((width, height))
-pygame.display.set_caption('Game tre con')
-
-# MAU SAC
+pygame.display.set_caption("Rắn săn mồi")
+# Màu sắc
+black = (0, 0, 0)
 white = (255, 255, 255)
-green = (0, 256, 0)
+green = (0, 255, 0)
 red = (255, 0, 0)
 
-# TOC DO KHUNG HINH
-clock = pygame.time.Clock()
-fps =   10
-
-# Khoi tao Snake
+# Khởi tạo rắn và mồi
 snake_pos = [100, 50]
 snake_body = [[100, 50], [90, 50], [80, 50]]
+snake_dir = "RIGHT"
+change_to = snake_dir
 
-# Khoi tao thuc an
-food_pos = [random.randrange(1, (width/10) * 10), random.randrange(1, (height/10) * 10)]
+food_pos = [random.randrange(1, (width//10)) * 10,
+            random.randrange(1, (height//10)) * 10]
 food_spawn = True
 
-# Khoi tao huong di chuyen ban dau
-direction = 'RIGHT'
-change_to = direction
-
-# Ham ve Snake
-def draw_snake(screen, snake_body):
-    for pos in snake_body:
-        pygame.draw.rect(screen, green, pygame.Rect(pos[0], pos[1], 10, 10))
-
-# Ham ve Thuc an
-def draw_food(screen, food_pos):
-    pygame.draw.rect(screen, red, pygame.Rect(food_pos[0], food_pos[1], 10, 10))
-
-# Vong lap chinh
-while True:
+# Khởi tạo điểm
+score = 0
+# Thêm biến cho thông báo thua
+game_over = False
+# Vòng lặp chính
+while not game_over:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
-
-        elif event.type == pygame.KEYDOWN:
-            if event.type == pygame.K_UP:
-                change_to == 'UP'
-            if event.type == pygame.K_DOWN:
-                change_to == 'DOWN'
-            if event.type == pygame.K_LEFT:
-                change_to == 'LEFT'
-            if event.type == pygame.K_RIGHT:
-                change_to == 'RIGHT'
-
-# Dieu kien nguoc huong di chuyen
-    if change_to == 'UP' and not direction == 'DOWN':
-        direction == 'UP'
-    if change_to == 'DOWN' and not direction == 'UP':
-        direction == 'DOWN'
-    if change_to == 'RIGHT' and not direction == 'LEFT':
-        direction == 'RIGHT'
-    if change_to == 'LEFT' and not direction == 'RIGHT':
-        direction == 'LEFT'
-
-    # Cap nhat vi tri snake
-    if direction == 'UP':
+            sys.exit()
+# Xử lý phím nhấn
+        keys = pygame.key.get_pressed()
+        for key in keys:
+            if keys[pygame.K_UP]:
+                change_to = "UP"
+            if keys[pygame.K_DOWN]:
+                change_to = "DOWN"
+            if keys[pygame.K_LEFT]:
+                change_to = "LEFT"
+            if keys[pygame.K_RIGHT]:
+                change_to = "RIGHT"
+# Xác định hướng mới của rắn
+    if change_to == "UP" and not snake_dir == "DOWN":
+        snake_dir = "UP"
+    if change_to == "DOWN" and not snake_dir == "UP":
+        snake_dir = "DOWN"
+    if change_to == "LEFT" and not snake_dir == "RIGHT":
+        snake_dir = "LEFT"
+    if change_to == "RIGHT" and not snake_dir == "LEFT":
+        snake_dir = "RIGHT"
+# Di chuyển rắn theo hướng
+    if snake_dir == "UP":
         snake_pos[1] -= 10
-    if direction == 'DOWN':
+    if snake_dir == "DOWN":
         snake_pos[1] += 10
-    if direction == 'LEFT':
+    if snake_dir == "LEFT":
         snake_pos[0] -= 10
-    if direction == 'RIGHT':
+    if snake_dir == "RIGHT":
         snake_pos[0] += 10
-    
-    # Tao thuc an moi khi snake an thuc an
+# Tạo điều kiện thua
+    if (
+        snake_pos[0] < 0
+        or snake_pos[0] >= width
+        or snake_pos[1] < 0
+        or snake_pos[1] >= height
+    ):
+        game_over = True
+# Thêm phần tử đầu tiên của rắn vào snake_body
     snake_body.insert(0, list(snake_pos))
+# Kiểm tra va chạm với mồi
     if snake_pos[0] == food_pos[0] and snake_pos[1] == food_pos[1]:
+        score += 1
         food_spawn = False
     else:
         snake_body.pop()
-    
+
     if not food_spawn:
-        food_pos = [random.randrange(width/10) * 10, random.randrange(height/10) * 10]
-    food_spawn = True
+        food_pos = [random.randrange(1, (width//10)) * 10,
+                    random.randrange(1, (height//10)) * 10]
+        food_spawn = True
+# Cập nhật màn hình
+    screen.fill(black)
+    for pos in snake_body:
+        pygame.draw.rect(screen, green, pygame.Rect(pos[0], pos[1], 10, 10))
 
-    # Ve man hinh choi
-    screen.fill(white)
-    draw_snake(screen, snake_body)
-    draw_food(screen, food_pos)
+    pygame.draw.rect(screen, white, pygame.Rect(
+        food_pos[0], food_pos[1], 10, 10))
+# Hiển thị điểm
+    font = pygame.font.Font(None, 36)
+    text = font.render("SCORE: " + str(score), True, white)
+    screen.blit(text, (10, 10))
 
-    # Cap nhat man hinh
     pygame.display.update()
-    clock.tick(fps)
 
-# Dong cua so khi thoat vong lap
-pygame.quit()
+    pygame.time.Clock().tick(15)  # Điều chỉnh tốc độ của trò chơi
