@@ -1,0 +1,37 @@
+Câu 1. Câu lệnh SELECT có đặc điểm gì khác với các câu lệnh khác trong SQL?
+* Answer: Lệnh SELECT trong SQL cho phép truy vấn và hiện thị dữ liệu theo ý muốn người dùng từ một hoặc nhiều bảng có liên kết với nhau.
+
+
+Câu 2. Lệnh nào dưới đây trả về tên và email của người dùng, sao cho không kết quả nào trùng nhau?
+A. SELECT Name, Email FROM Users;
+B. SELECT DISTINCT Name, Email FROM Users;
+C. SELECT DISTINCT (Name, Email) FROM Users;
+D. SELECT DISTINCT Name, DISTINCT Email FROM Users;
+* Answer: C
+
+
+
+Câu 3. Cho một bảng có cột file_name lưu tên các file ảnh. Điều kiện nào sau đây trong mệnh đề WHERE lọc ra các dòng chứa các file ảnh jpg và jpeg?
+A. WHERE file_name LIKE '%jpg' OR file_name LIKE '%jpg'
+B. WHERE file_name LIKE '%jpg' OR '%jpeg'
+C. WHERE file_name IN ('%jpg', '%jpeg')
+D. WHERE file_name = '%jpg' OR file_name = '%jpg'
+* Answer: A
+
+
+
+Câu 4. Chọn thứ tự đúng của các từ khóa trong câu lệnh SELECT
+A. WHERE -> FROM -> LIMIT -> ORDER BY
+B. FROM -> WHERE -> LIMIT -> ORDER BY
+C. FROM -> WHERE -> ORDER BY -> LIMIT 
+D. WHERE -> FROM -> ORDER BY -> LIMIT
+* Answer: B
+
+
+
+Câu 5. Trong SQL, lệnh nào xử lý trên tất cả các dòng nếu không có điều kiện ở WHERE?
+A. SELECT
+B. UPDATE
+C. DELETE
+D. Tất cả các lệnh trên.
+* Answer: D

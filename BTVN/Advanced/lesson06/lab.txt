@@ -1,0 +1,31 @@
+Truy Vấn: 
+
+1. 
+SELECT * FROM northwind WHERE country LIKE 'Mexico'
+
+2.
+SELECT DISTINCT country FROM northwind
+
+3.
+SELECT * FROM northwind WHERE country LIKE 'Mexico' OR LIKE 'Canada' OR LIKE 'United States'
+
+4.
+SELECT CustomerName FROM northwind WHERE NOT CustomerName LIKE 'San Francisco'
+
+5. 
+SELECT ProductName AS 'Name', Unit FROM northwind
+
+6.
+SELECT * FROM northwind ORDER BY Price ASC
+
+7.
+SELECT TOP 3 * FROM northwind ORDER BY Price DESC 
+
+8.
+SELECT * FROM northwind WHERE 10 < Price > 25
+
+9. 
+SELECT COUNT(*) FROM northwind WHERE OrderDate = '1996-08'
+
+10.
+SELECT * FROM northwind WHERE ProductID > 10 AND Quanity > 10
