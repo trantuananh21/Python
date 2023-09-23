@@ -1,0 +1,18 @@
+Bai 1:
+SELECT * FROM bangSV 
+WHERE NamSinh = 2003
+
+Bai 2:
+SELECT * FROM bangSV 
+WHERE NamSinh = 2003 AND 
+MathTest > 8
+
+Bai 3: 
+SELECT * FROM bangSV 
+WHERE DiaChi = 'Ha Noi' AND
+MathTest > 8
+
+Bai 4:
+UPDATE bangSV 
+SET MathTest = 9
+WHERE DiaChi = 'Ha Noi'
