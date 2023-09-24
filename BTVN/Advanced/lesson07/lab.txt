@@ -1,0 +1,54 @@
+1:
+SELECT OrderDate AS 'EarliestDate' 
+FROM Orders 
+ORDER BY OrderDate 
+LIMIT 1
+
+2:
+SELECT COUNT(*) AS 'TotalOrders' 
+FROM Orders
+
+3:
+SELECT OrderID, SUM(Quantity) AS 'TotalItems'
+FROM OrderDetails
+GROUP BY OrderID
+
+4:
+SELECT OrderID, AVG(Quantity)
+FROM OrderDetails
+GROUP BY OrderID
+
+5:
+SELECT DISTINCT OrderID, COUNT(OrderID) AS 'DistinctItems'
+FROM OrderDetails
+GROUP BY OrderID
+
+6:
+SELECT Category, AVG(Price) AS 'AvPrice' 
+FROM Products 
+GROUP BY Category 
+HAVING AVG(Price) > 20 AND AVG(Price) < 30 
+
+7:
+SELECT DISTINCT Country, COUNT(CustomerID) 
+AS 'CustomerCount' FROM [Customers] 
+GROUP BY Country 
+HAVING COUNT(CustomerID) > 10 
+
+8:
+SELECT CustomerID, COUNT(OrderDate) 
+FROM Orders 
+GROUP BY CustomerID 
+ORDER BY COUNT(OrderDate) DESC
+
+9:
+SELECT ProductID, COUNT(ProductID) 
+FROM OrderDetails
+GROUP BY ProductID 
+HAVING COUNT(ProductID) > 10
+
+
+10:
+SELECT ProductID, SUM(Quantity)
+FROM OrderDetails
+WHERE ProductID = 1

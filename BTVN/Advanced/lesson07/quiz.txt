@@ -1,0 +1,46 @@
+Câu 1:
+Trong câu lệnh SELECT, điều kiện ở HAVING có gì khác với điều kiện ở WHERE?
+
+Trả lời:
+WHERE là câu lệnh điều kiện trả kết quả đối chiếu với từng dòng.
+HAVING là câu lệnh điều kiện trả kết quả đối chiếu cho nhóm được tạo bởi mệnh đề GROUP BY.
+
+
+Câu 2:
+Vì sao từ khóa GROUP BY thường được sử dụng cùng với các hàm có sẵn như MAX(), SUM(), COUNT()?
+
+Trả lời:
+Câu lệnh GROUP BY thường được dùng với các hàm tổng hợp (COUNT(), MAX(), MIN(), SUM(), AVG()) 
+để nhóm các tập kết quả vào một hoặc nhiều cột.
+
+
+Câu 3:
+Lệnh nào dưới đây dùng để tính giá trị trung bình trong cột Price của bảng Products? Biết cột Price có kiểu dữ liệu là số thực.
+A. SELECT AVG(Price) FROM Products;
+B. SELECT AVERAGE(Price) FROM Products;
+C. SELECT SUM(Price)/COUNT(Price) FROM Products;
+D. Cả A và C đều đúng.
+
+Trả lời: D
+
+
+Câu 4:
+Trong câu lệnh SELECT, mệnh đề GROUP BY column1, column2 có ý nghĩa gì?
+A. Nhóm các dòng có cùng giá trị ở column1 và column2 vào cùng nhóm.
+B. Nhóm các dòng có cùng giá trị ở column1 hoặc column2 vào cùng nhóm.
+C. Nhóm các dòng có cùng giá trị ở column1 vào cùng nhóm. Đối với các dòng có giá trị NULL ở column1, nhóm
+các dòng có cùng giá trị ở column2 vào cùng nhóm.
+D. Mệnh đề GROUP BY chỉ có thể nhóm theo một cột duy nhất.
+
+Trả lời: C
+
+
+Câu 5:
+Cho một bảng có cột Country chứa tên các nước. Cần dùng tối thiểu những từ khóa nào trong câu lệnh SELECT để đếm số lần xuất 
+hiện của từng nước trong bảng?
+A. SELECT, COUNT, FROM, GROUP BY
+B. SELECT, COUNT, FROM, WHERE, GROUP BY
+C. SELECT, COUNT, FROM, GROUP BY , HAVING
+D. SELECT, COUNT, FROM, WHERE, GROUP BY, HAVING
+
+Trả lời: A
