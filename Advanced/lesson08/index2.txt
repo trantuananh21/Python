@@ -1,0 +1,56 @@
+1. 
+SELECT * 
+FROM bangSV
+
+2.
+SELECT * 
+FROM bangSV
+WHERE ID = 4
+
+3.
+SELECT * 
+FROM bangSV
+WHERE Tuoi >= 15
+
+4.
+SELECT HoTen, DiemToan
+FROM bangSV
+WHERE Tuoi =< 16
+
+5.
+SELECT COUNT(*)
+FROM bangSV
+WHERE DiemToan > 7
+
+6.
+SELECT AVG(DiemToan+DiemVan+DiemAnh)/3
+FROM bangSV
+
+7.
+SELECT *
+FROM bangSV
+ORDER BY DiemAnh DESC
+LIMIT 1
+
+8.
+SELECT *
+FROM bangSV
+ORDER BY DiemToan ASC
+LIMIT 1
+
+9.
+SELECT *
+FROM bangSV
+WHERE HoTen LIKE 'Nguyễn%' AND DiemToan = 10
+
+10.
+SELECT *
+FROM bangSV
+WHERE DiemToan > 6 AND 
+DiemVan > 6 AND
+DiemAnh > 6
+
+11.
+ALTER TABLE bangSV ADD average int,
+UPDATE bangSV SET average = (DiemToan + DiemVan + DiemToan) / 3;
+SELECT * FROM bangSV ORDER BY average ASC
