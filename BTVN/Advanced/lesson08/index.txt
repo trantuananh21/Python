@@ -1,0 +1,33 @@
+1.
+SELECT Orders.OrderID, Customers.CustomerID, Customers.CustomerName, Customers.Country
+FROM Orders
+RIGHT JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+ORDER BY OrderID
+
+
+2.
+SELECT  Customers.Country, COUNT(Orders.OrderID) AS 'Ordered'
+FROM Orders
+RIGHT JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+GROUP BY Country
+ORDER BY (SELECT COUNT(OrderID)) DESC
+
+
+3.
+SELECT  Products.ProductID, Products.ProductName, OrderDetails.Quantity, Products.Price
+FROM Products
+LEFT JOIN OrderDetails ON Products.ProductID = OrderDetails.ProductID
+WHERE OrderID = 10248
+
+6.
+SELECT Orders.OrderID, Orders.CustomerID, Orders.OrderDate
+FROM [Orders]
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+WHERE OrderDate < '1996-07-08'
+
+
+7.
+SELECT ProductID, ProductName, Price
+FROM [Products]
+WHERE Price > (SELECT AVG(Price) FROM Products)
+ORDER BY Price ASC

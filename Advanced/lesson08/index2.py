@@ -14,4 +14,4 @@ create table bangSV(
     )
 """
 )
-c.close()
+conn.close()
