@@ -218,9 +218,11 @@ WHERE DiemTB > 6.5
 6.
 SELECT *, MAX(DiemToan)
 FROM bangSV
+WHERE DiemToan = (SELECT MAX(DiemToan) FROM bangSV)
 
 SELECT * , MIN(DiemLy)
 FROM bangSV
+WHERE DiemLy = (SELECT MIN(DiemLy) FROM bangSV)
 
 7.
 ALTER TABLE bangSV add DiemTBLyHoa int
@@ -239,3 +241,18 @@ ORDER BY DiemTB DESC
 SELECT *
 FROM bangSV
 WHERE Ten LIKE '%Nguyễn' AND DiemToan > 7
+
+10.
+SELECT *
+FROM bangSV
+WHERE DiaChi = 'Hà Nội'
+
+11.
+SELECT *
+FROM bangSV
+WHERE DiemTB = (SELECT MAX(DiemTB) FROM bangSV)
+
+12.
+SELECT *
+FROM bangSinhVien
+WHERE GREATEST(DiemToan, DiemLy, DiemHoa) = 10
