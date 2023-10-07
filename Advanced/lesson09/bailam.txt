@@ -1,0 +1,241 @@
+INSERT INTO bangSV (
+                       ID,
+                       Ten,
+                       DiaChi,
+                       NamSinh,
+                       DiemToan,
+                       DiemLy,
+                       DiemHoa
+                   )
+                   VALUES (
+                       '1',
+                       'Nguyễn Văn A',
+                       'Hà Nội',
+                       '2002',
+                       '7',
+                       '8',
+                       '9'
+                   );
+
+INSERT INTO bangSV (
+                       ID,
+                       Ten,
+                       DiaChi,
+                       NamSinh,
+                       DiemToan,
+                       DiemLy,
+                       DiemHoa
+                   )
+                   VALUES (
+                       '2',
+                       'Nguyễn Thị B',
+                       'Hải Phòng',
+                       '2003',
+                       '8',
+                       '8',
+                       '9'
+                   )
+
+
+INSERT INTO bangSV (
+                       ID,
+                       Ten,
+                       DiaChi,
+                       NamSinh,
+                       DiemToan,
+                       DiemLy,
+                       DiemHoa
+                   )
+                   VALUES (
+                       '3',
+                       'Trần Văn C',
+                       'Thái Bình',
+                       '1998',
+                       '7',
+                       '7',
+                       '9'
+                   );
+
+INSERT INTO bangSV (
+                       ID,
+                       Ten,
+                       DiaChi,
+                       NamSinh,
+                       DiemToan,
+                       DiemLy,
+                       DiemHoa
+                   )
+                   VALUES (
+                       '4',
+                       'Đào Văn D ',
+                       'Hải Dương',
+                       '1997',
+                       '6',
+                       '9',
+                       '8'
+                   )
+
+INSERT INTO bangSV (
+                       ID,
+                       Ten,
+                       DiaChi,
+                       NamSinh,
+                       DiemToan,
+                       DiemLy,
+                       DiemHoa
+                   )
+                   VALUES (
+                       '5',
+                       'Trường Văn E',
+                       'TP HCM',
+                       '1990',
+                       '5',
+                       '6',
+                       '7'
+                   )
+
+INSERT INTO bangSV (
+                       ID,
+                       Ten,
+                       DiaChi,
+                       NamSinh,
+                       DiemToan,
+                       DiemLy,
+                       DiemHoa
+                   )
+                   VALUES (
+                       '6',
+                       'Hoàng Ngọc F',
+                       'Quảng Nam',
+                       '1991',
+                       '7',
+                       '5',
+                       '10'
+                   )
+
+
+INSERT INTO bangSV (
+                       ID,
+                       Ten,
+                       DiaChi,
+                       NamSinh,
+                       DiemToan,
+                       DiemLy,
+                       DiemHoa
+                   )
+                   VALUES (
+                       '7',
+                       'Trịnh Văn G',
+                       'Hà Tĩnh',
+                       '1992',
+                       '8',
+                       '7',
+                       '5'
+                   )
+
+INSERT INTO bangSV (
+                       ID,
+                       Ten,
+                       DiaChi,
+                       NamSinh,
+                       DiemToan,
+                       DiemLy,
+                       DiemHoa
+                   )
+                   VALUES (
+                       '8',
+                       'Bùi Văn H',
+                       'Thanh Hoá',
+                       '2005',
+                       '9',
+                       '8',
+                       '6'
+                   )
+
+
+INSERT INTO bangSV (
+                       ID,
+                       Ten,
+                       DiaChi,
+                       NamSinh,
+                       DiemToan,
+                       DiemLy,
+                       DiemHoa
+                   )
+                   VALUES (
+                       '9',
+                       'Phạm Văn Y',
+                       'Nghệ An',
+                       '1994',
+                       '10',
+                       '10',
+                       '7'
+                   )
+
+INSERT INTO bangSV (
+                       ID,
+                       Ten,
+                       DiaChi,
+                       NamSinh,
+                       DiemToan,
+                       DiemLy,
+                       DiemHoa
+                   )
+                   VALUES (
+                       '10',
+                       'Nông Văn K',
+                       'Vinh',
+                       '1995',
+                       '7',
+                       '9',
+                       '8'
+                   )
+
+
+2.
+SELECT Ten, NamSinh
+FROM bangSV
+
+3.
+SELECT *
+FROM bangSV
+WHERE DiemToan > 7
+
+4.
+SELECT *
+FROM bangSV
+WHERE DiemLy > DiemToan AND DiemLy > DiemHoa
+
+5. 
+ALTER TABLE bangSV add DiemTB int
+UPDATE bangSV SET DiemTB = (DiemToan + DiemLy + DiemHoa) / 3
+
+SELECT *
+FROM bangSV
+WHERE DiemTB > 6.5
+
+
+6.
+SELECT *, MAX(DiemToan)
+FROM bangSV
+
+SELECT * , MIN(DiemLy)
+FROM bangSV
+
+7.
+ALTER TABLE bangSV add DiemTBLyHoa int
+UPDATE bangSV SET DiemTBLyHoa = (DiemLy + DiemHoa) / 2
+
+SELECT *
+FROM bangSV
+WHERE DiemToan > DiemTBLyHoa
+
+8.
+SELECT *
+FROM bangSV
+ORDER BY DiemTB DESC
+
+9.
+SELECT *
+FROM bangSV
+WHERE Ten LIKE '%Nguyễn' AND DiemToan > 7
