@@ -1,0 +1,189 @@
+INSERT INTO SanPham (
+                        ID,
+                        Ten,
+                        NamSanXuat,
+                        DiaChiSanXuat,
+                        Gia,
+                        SoLuong
+                    )
+                    VALUES (
+                        '1',
+                        'BanhGao',
+                        '2017',
+                        'Hà Nội',
+                        '10000',
+                        '20'
+                    );
+INSERT INTO SanPham (
+                        ID,
+                        Ten,
+                        NamSanXuat,
+                        DiaChiSanXuat,
+                        Gia,
+                        SoLuong
+                    )
+                    VALUES (
+                        '2',
+                        'Bánh Mỳ',
+                        '2021',
+                        'Hà Nội',
+                        '34000',
+                        '15'
+                    );
+
+INSERT INTO SanPham (
+                        ID,
+                        Ten,
+                        NamSanXuat,
+                        DiaChiSanXuat,
+                        Gia,
+                        SoLuong
+                    )
+                    VALUES (
+                        '3',
+                        'Xúc Xích',
+                        '2018',
+                        'Hải Phòng',
+                        '45000',
+                        '35'
+                    );
+
+INSERT INTO SanPham (
+                        ID,
+                        Ten,
+                        NamSanXuat,
+                        DiaChiSanXuat,
+                        Gia,
+                        SoLuong
+                    )
+                    VALUES (
+                        '4',
+                        'Chip Chip',
+                        '2022',
+                        'Thái Bình',
+                        '17000',
+                        '67'
+                    );
+
+INSERT INTO SanPham (
+                        ID,
+                        Ten,
+                        NamSanXuat,
+                        DiaChiSanXuat,
+                        Gia,
+                        SoLuong
+                    )
+                    VALUES (
+                        '5',
+                        'Bánh Cáy',
+                        '2023',
+                        'Thái Bình',
+                        '65000',
+                        '10'
+                    );
+
+INSERT INTO SanPham (
+                        ID,
+                        Ten,
+                        NamSanXuat,
+                        DiaChiSanXuat,
+                        Gia,
+                        SoLuong
+                    )
+                    VALUES (
+                        '6',
+                        'Bánh Đa',
+                        '2019',
+                        'Hải Phòng',
+                        '48000',
+                        '17'
+                    );
+
+INSERT INTO SanPham (
+                        ID,
+                        Ten,
+                        NamSanXuat,
+                        DiaChiSanXuat,
+                        Gia,
+                        SoLuong
+                    )
+                    VALUES (
+                        '8',
+                        'Kẹo Socola',
+                        '2022',
+                        'Cần Thơ',
+                        '13000',
+                        '12'
+                    );
+
+INSERT INTO SanPham (
+                        ID,
+                        Ten,
+                        NamSanXuat,
+                        DiaChiSanXuat,
+                        Gia,
+                        SoLuong
+                    )
+                    VALUES (
+                        '9',
+                        'Ngũ Vị Hương',
+                        '2023',
+                        'Yên Bái',
+                        '5000',
+                        '100'
+                    );
+
+INSERT INTO SanPham (
+                        ID,
+                        Ten,
+                        NamSanXuat,
+                        DiaChiSanXuat,
+                        Gia,
+                        SoLuong
+                    )
+                    VALUES (
+                        '10',
+                        'Bim Bim',
+                        '2023',
+                        'Bắc Ninh',
+                        '10000',
+                        '72'
+                    );
+
+
+2.
+SELECT *
+FROM SanPham
+WHERE NamSanXuat >= 2020
+
+3.
+SELECT *
+FROM SanPham
+WHERE DiaChiSanXuat LIKE 'Hà Nội' AND
+SoLuong < 5
+
+4.
+ALTER TABLE SanPham add TongSoTien
+UPDATE SanPham SET TongSoTien = Gia * SoLuong
+
+5.
+SELECT SUM(TongSoTien)
+FROM SanPham
+
+6.
+SELECT *
+FROM SanPham
+WHERE DiaChiSanXuat LIKE 'Hà Nội' AND
+TongSoTien < 500000
+
+7.
+SELECT *
+FROM SanPham
+WHERE SoLuong = (SELECT  MAX(SoLuong) FROM SanPham)
+
+8.
+SELECT *
+FROM SanPham e
+WHERE 2 = (SELECT COUNT(DISTINCT SoLuong) 
+         FROM SanPham p
+         WHERE e.SoLuong <= p.SoLuong) 
