@@ -186,4 +186,4 @@ SELECT *
 FROM SanPham e
 WHERE 2 = (SELECT COUNT(DISTINCT SoLuong) 
          FROM SanPham p
-         WHERE e.SoLuong <= p.SoLuong) 
+         WHERE e.SoLuong <= p.SoLuong)
