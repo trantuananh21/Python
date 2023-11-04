@@ -1,0 +1,84 @@
+Bảng bác sĩ:
+Tổng số bác sĩ:
+SELECT *
+FROM BacSi;
+
+Các khoa trong bệnh viện:
+SELECT DISTINCT(Khoa)
+FROM BacSi;
+
+Tất cả bác sĩ có quê Hà Nội:
+SELECT * 
+FROM BacSi
+WHERE DiaChi LIKE 'Hà Nội'
+
+Tất cả bác sĩ có họ Nguyễn mà làm khoa nhi:
+SELECT *
+FROM BacSi
+WHERE HoTen LIKE 'Nguyễn%' AND
+Khoa LIKE 'Nhi'
+
+Tất cả bác sĩ có họ Trần mà làm khoa mắt:
+SELECT *
+FROM BacSi
+WHERE HoTen LIKE 'Trần%' AND
+Khoa LIKE 'Mắt'
+
+Tất cả bác sĩ có tuổi lớn hơn hoặc bằng 2000:
+SELECT *
+FROM BacSi
+WHERE NamSinh >= 2000
+
+Hệ số lương qua các khoa (sắp xếp tăng dần): 
+SELECT DISTINCT(Khoa), HSL
+FROM BacSi
+ORDER BY HSL ASC
+
+Tính tổng số lương của từng bác sĩ (LCB: 50tr):
+ALTER TABLE BacSi add Luong
+UPDATE BacSi SET Luong = HSL * 50000000
+
+
+Bảng thuốc:
+Tổng hợp tất cả các chức năng của tất cả loại thuốc:
+SELECT DISTINCT(ChucNang)
+FROM Thuoc;
+
+Số năm có thể dùng thuốc (vì sqlite3 không hỗ trợ data loại date nên chỉ tính được năm, không tính được ngày)
+SELECT *, HSD - NSX
+FROM Thuoc;
+
+
+Bảng bệnh nhân:
+Tổng số bệnh nhân của bệnh viện:
+SELECT COUNT(*)
+  FROM BenhNhan
+
+Tất cả bệnh nhân có địa chỉ ở Hà Nội: 
+SELECT *
+  FROM BenhNhan
+WHERE DiaChi = 'Hà Nội'
+
+Tất cả bệnh nhân sinh trước năm 2000 và có địa chỉ ở HCM:
+SELECT *
+  FROM BenhNhan
+WHERE NamSinh < 2000 AND 
+DiaChi = 'HCM'
+
+Bệnh nhân nhập viện trước hoặc vào năm 2023:
+SELECT *
+  FROM BenhNhan
+WHERE NgayNhapVien < '2023'
+
+Liên kết bác sĩ da liễu với bệnh nhân da liễu:
+SELECT BenhNhan.HoTen AS HoTenBenhNhan, BacSi.HoTen AS HoTenBacSi
+FROM BenhNhan
+INNER JOIN BacSi ON BenhNhan.Khoa = BacSi.Khoa
+WHERE BenhNhan.Khoa = 'Da liễu'
+
+
+Liên kết thuốc dị ứng với bệnh nhân dị ứng:
+SELECT HoTen
+FROM BenhNhan
+INNER JOIN Thuoc ON BenhNhan.Khoa = Thuoc.ChucNang
+WHERE Thuoc.ChucNang LIKE 'Dị ứng'
