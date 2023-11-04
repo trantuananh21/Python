@@ -34,6 +34,10 @@ SELECT DISTINCT(Khoa), HSL
 FROM BacSi
 ORDER BY HSL ASC
 
+Trung bình hệ số lương:
+SELECT AVG(HSL)
+FROM BacSi
+
 Tính tổng số lương của từng bác sĩ (LCB: 50tr):
 ALTER TABLE BacSi add Luong
 UPDATE BacSi SET Luong = HSL * 50000000
