@@ -31,7 +31,7 @@ while True:
         d2 = today.strftime("%B %d, %Y")
         robot_brain = d2
     elif 'stupid' in you:
-        robot_brain = 'Không, Lý chim rất to và thông minh'
+        robot_brain = 'Không, Lý thông minh'
     elif 'time' in you:
         now = datetime.now()
         robot_brain = now.strftime("%H hours %M minutes %S seconds")
