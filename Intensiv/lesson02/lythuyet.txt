@@ -1,0 +1,2 @@
+độ phức tạp về thời gian là số phép tính mà toán cần sử dụng để chạy xong
+độ phức tạp về không gian là số bộ nhớ thuật toán cần dùng ( số các biến thuật toán cần dùng)

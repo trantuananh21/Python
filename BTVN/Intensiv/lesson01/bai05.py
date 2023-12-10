@@ -5,7 +5,10 @@ class Contact():
         self.email = email
 
     def getInfo(self):
-        return self.ten, self.sdt, self.email
+        return {'Ten:', self.ten,
+
+            self.sdt,
+            self.email}
 
 person01 = Contact('Tuan Anh', '09201830', 'tuanvananh@gmail.com')
 person02 = Contact('Bang Anh', '093821231', 'bangthianh@gmail.com')

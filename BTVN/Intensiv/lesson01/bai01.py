@@ -19,6 +19,7 @@ class MobilePhone():
 phone01 = MobilePhone('Iphone 15', 'IOS', '100%', 'off')
 phone02 = MobilePhone('Zflip', 'Android', '70%', 'on')
 
-print(phone01.turnOff())
-print(phone02.turnOn())
+print(phone02.turnOff())
+print(phone01.turnOn())
 print(phone01.checkBat())
+print(phone02.checkBat())
