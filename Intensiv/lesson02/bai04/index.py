@@ -1,5 +1,5 @@
 class Sach():
-    def __init__(self) -> None:
+    def __init__(self):
         self.ma = input('Ma sach: ')
         self.ten = input('Ten sach: ')
         self.nha_xuat_ban = input('Nha xuat ban: ')

@@ -7,10 +7,10 @@ class SinhVien():
 
     def display(self):
         print(f'''
-            Ma SV:, {self.ma_sv}, 
-            HoTen:,  {self.hoten},
-            Tuoi:, {self.tuoi}, 
-            Diem:, {self.diem}
+            Ma SV: {self.ma_sv}
+            HoTen:  {self.hoten}
+            Tuoi: {self.tuoi}
+            Diem: {self.diem}
             ''')
     
 

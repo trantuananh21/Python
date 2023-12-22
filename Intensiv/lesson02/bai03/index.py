@@ -1,5 +1,5 @@
 class HangHoa():
-    def __init__(self) -> None:
+    def __init__(self):
         self.ma = input('Ma hang: ')
         self.ten = input('Ten hang: ')
         self.gia = float(input('Gia: '))
