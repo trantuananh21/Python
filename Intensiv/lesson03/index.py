@@ -54,7 +54,7 @@
 # In day so
 # def day_so(n):
 #     if n <= 0:
-#         print('Tu 1 den n ma ban oi')
+#         return 0
 #     else:
 #         day_so(n-1)
 #         print(n)
@@ -79,3 +79,17 @@
 
 
 # Tong uoc cua so nguyen duong
+def tong_uoc(n, i):
+    if i > n // 2:
+        return 1
+    elif i < n // 2:
+        return i + tong_uoc(n, i-1)
+    else:
+        print(n)
+
+print(tong_uoc(6))
+
+# n = 6
+# for i in range(1, n+1):
+#     if n % i == 0:
+#         print(i)
