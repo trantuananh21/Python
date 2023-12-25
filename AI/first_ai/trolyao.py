@@ -24,7 +24,7 @@ while True:
     if you == '':
         robot_brain = "I can't hear you, try again"
     elif 'hello' in you:
-        robot_brain = 'Xin chào ngài bơ tơ Trần'
+        robot_brain = 'Xin chào ngài tỷ phú bơ tơ Trần'
     elif 'today' in you:
         today = date.today()
 
