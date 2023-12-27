@@ -79,17 +79,14 @@
 
 
 # Tong uoc cua so nguyen duong
-def tong_uoc(n, i):
-    if i > n // 2:
-        return 1
-    elif i < n // 2:
-        return i + tong_uoc(n, i-1)
-    else:
-        print(n)
+l = []
+def factors(n, i):
+    if (i <= n):
+        if (n % i == 0):
+            l.append(i)
+         
+        factors(n, i + 1)
 
-print(tong_uoc(6))
-
-# n = 6
-# for i in range(1, n+1):
-#     if n % i == 0:
-#         print(i)
+factors(9,1)
+print(l)
+print(sum(l))
