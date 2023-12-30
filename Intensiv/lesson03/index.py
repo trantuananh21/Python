@@ -90,3 +90,12 @@ def factors(n, i):
 factors(9,1)
 print(l)
 print(sum(l))
+
+# i là số đếm từ 1 đến số n, khi số i nhỏ hơn hoặc bằng n thì sẽ có 
+# dòng kiểm tra n chia số đó có dư bằng không hay không, nếu đúng thì append làm list l
+# sau đó trả về factors(n,i+1) để i tăng thêm một số
+# vd: n = 3 và i = 1
+# vì i = 1 nhỏ hơn 3 nên chạy dòng kiểm tra 3 chia 1 có dư bằng 0 không
+# vì 3 chia hết cho 1 nên số một sẽ được thêm vào list l
+# sau đó function trả về factors(3, 1+1) => n = 3 và i = 2
+# function sẽ chạy đến khi i = n, khi i = n thì function sẽ ngừng chạy
