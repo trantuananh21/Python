@@ -1,0 +1,4 @@
+Đệ quy là gì?
+Đệ quy là một hàm tự gọi lại chính nó để tập hợp lại các tham số. Đệ quy hoạt động có hai thành phần chính
+là điều kiện dừng và phương thức đệ quy. Nếu không có điều kiện dừng thì đệ quy sẽ liên tục chạy các tham
+số và không đưa về bất cứ kết quả nào
