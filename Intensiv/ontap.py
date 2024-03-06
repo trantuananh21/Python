@@ -56,22 +56,6 @@
 
 # print(insertion_sort(a))
 
-# Interchange Sort
-# def interchange_sort(arr):
-#     n = len(arr)
-
-#     for i in range(n - 1):
-#         for j in range(i+1, n):
-#             if arr[i] > arr[j]:
-#                 temp = arr[i]
-#                 arr[i] = arr[j]
-#                 arr[j] = temp
-
-#     return arr
-
-# a = [7,2,19,241,312]
-# print(interchange_sort(a))
-
 # Quick Sort
 # def QuickSort(arr):
 
@@ -105,42 +89,54 @@
 # print("Sorted Array: ",QuickSort(array_to_be_sorted))
 
 # Merge Sort
-def mergeSort(arr):
-	if len(arr) > 1:
+# def mergeSort(arr):
+# 	if len(arr) > 1:
 
-		mid = len(arr)//2
+# 		mid = len(arr)//2
 
-		left = arr[:mid]
+# 		left = arr[:mid]
 
-		right = arr[mid:]
+# 		right = arr[mid:]
 
-		mergeSort(left)
+# 		mergeSort(left)
 
-		mergeSort(right)
+# 		mergeSort(right)
 
-		i = j = k = 0
+# 		i = j = k = 0
 
-		while i < len(left) and j < len(right):
-			if left[i] <= right[j]:
-				arr[k] = left[i]
-				i += 1
-			else:
-				arr[k] = right[j]
-				j += 1
-			k += 1
+# 		while i < len(left) and j < len(right):
+# 			if left[i] <= right[j]:
+# 				arr[k] = left[i]
+# 				i += 1
+# 			else:
+# 				arr[k] = right[j]
+# 				j += 1
+# 			k += 1
 
-		while i < len(left):
-			arr[k] = left[i]
-			i += 1
-			k += 1
+# 		while i < len(left):
+# 			arr[k] = left[i]
+# 			i += 1
+# 			k += 1
 
-		while j < len(right):
-			arr[k] = right[j]
-			j += 1
-			k += 1
+# 		while j < len(right):
+# 			arr[k] = right[j]
+# 			j += 1
+# 			k += 1
 			
-		return arr
+# 		return arr
 
-arr = [34, 11, 68, 5, 84]
-print("Given array is", arr)
-print("\nSorted array is ", mergeSort(arr))
+# arr = [34, 11, 68, 5, 84]
+# print("Given array is", arr)
+# print("\nSorted array is ", mergeSort(arr))
+a = [2,0,4,19,82]
+
+def bubble_sort(arr):
+    n = len(arr)
+
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] < arr[j+1]:
+                temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
+print(bubble_sort(a))

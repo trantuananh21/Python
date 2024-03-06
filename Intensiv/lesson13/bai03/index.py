@@ -34,34 +34,34 @@ a = [1, 4, 5, 12, 2, 45, 63, 102, 99, 87, 47, 65]
 
 # print(selection_sort(a))
 
-def QuickSort(arr):
+# def QuickSort(arr):
 
-    n = len(arr) # Độ dài của mảng
+#     n = len(arr) # Độ dài của mảng
     
-    current_position = 0 # Vị trí chọn
+#     current_position = 0 # Vị trí chọn
 
-    for i in range(1, n):
-         if arr[i] <= arr[0]: # Nếu số đầu tiên của mảng lớn hơn hoặc bằng số i thì:
-              current_position += 1 # Vị trí chọn tăng thêm 1 đơn vị
+#     for i in range(1, n):
+#          if arr[i] <= arr[0]: # Nếu số đầu tiên của mảng lớn hơn hoặc bằng số i thì:
+#               current_position += 1 # Vị trí chọn tăng thêm 1 đơn vị
 
-              # Đổi số i với số của vị trí chọn
-              temp = arr[i]
-              arr[i] = arr[current_position]
-              arr[current_position] = temp
+#               # Đổi số i với số của vị trí chọn
+#               temp = arr[i]
+#               arr[i] = arr[current_position]
+#               arr[current_position] = temp
 
-    # Đổi vị trí số ban đầu với số của vị trí chọn
-    temp = arr[0]
-    arr[0] = arr[current_position] 
-    arr[current_position] = temp 
+#     # Đổi vị trí số ban đầu với số của vị trí chọn
+#     temp = arr[0]
+#     arr[0] = arr[current_position] 
+#     arr[current_position] = temp 
     
-    # Dãy số bên trái
-    left = QuickSort(arr[0:current_position]) 
-    # Dãy số bên phải
-    right = QuickSort(arr[current_position+1:n])
+#     # Dãy số bên trái
+#     left = QuickSort(arr[0:current_position]) 
+#     # Dãy số bên phải
+#     right = QuickSort(arr[current_position+1:n])
 
-    # Cả mảng sẽ bằng dãy số cộng số ở vị trí chọn cộng dãy bên phải
-    arr = left + [arr[current_position]] + right 
+#     # Cả mảng sẽ bằng dãy số cộng số ở vị trí chọn cộng dãy bên phải
+#     arr = left + [arr[current_position]] + right 
     
-    return arr
+#     return arr
 
-print(QuickSort(a))
+# print(QuickSort(a))
