@@ -128,15 +128,3 @@
 # arr = [34, 11, 68, 5, 84]
 # print("Given array is", arr)
 # print("\nSorted array is ", mergeSort(arr))
-a = [2,0,4,19,82]
-
-def bubble_sort(arr):
-    n = len(arr)
-
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if arr[j] < arr[j+1]:
-                temp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = temp
-print(bubble_sort(a))

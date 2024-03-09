@@ -1,0 +1,9 @@
+Định nghĩa:
+- Queue và Stack đều là hai cấu trúc dữ liệu rất quan trọng trong việc lập trình
+
+Điểm khác biệt:
+- Stack là một cấu trúc dữ liệu hoạt động theo nguyên tắc vào sau ra trước
+- Queue là một cấu trúc dữ liệu hoạt động theo nguyên tắc vào trước ra trước
+
+- Stack sẽ giống như xếp một chồng sách, những sách ở trên sẽ được lấy ra trước những sách ở dưới
+- Còn Queue thì sẽ giống như việc xếp hàng, ai đứng trước thì được phục vụ trước
